@@ -58,7 +58,7 @@
     <div class="uk-margin">
         <div class="uk-form-controls">
             <label class="uk-form-label" for="form-stacked-select">Descripcion *:</label>
-            <textarea class="uk-input" name="description" rows="5"></textarea>
+            <textarea class="uk-input" name="description" rows="5" cols="4"></textarea>
         </div>
     </div>
 
@@ -70,20 +70,52 @@
     </div>
 
     <div class="uk-margin">
+        <label class="uk-form-label" for="form-stacked-select">Período*:</label>
+        <div class="uk-form-controls">
+
+            <select class="uk-select" name="period_id">
+                @foreach ($periods as $period)
+                    <option value="{{$period->id}}">{{$period->name}}</option>
+                @endforeach
+            </select>
+
+        </div>
+    </div>
+
+
+    <div class="uk-margin">
 
         <div class="uk-form-controls">
-            <label class="uk-form-label" for="form-stacked-select">Fecha desde *:</label>
-            <input class="uk-input" name="begins_on" type="date" value="{{date("Y-m-d")}}"/>
+            <label class="uk-form-label" for="form-stacked-select">Desde:</label>
+            <input class="uk-input" name="from" type="date" value=""/>
         </div>
     </div>
 
     <div class="uk-margin">
 
         <div class="uk-form-controls">
-            <label class="uk-form-label" for="form-stacked-select">Fecha hasta*:</label>
-            <input class="uk-input" name="expires_on" type="date" value="{{ date("Y-m-d")}}"/>
-
+            <label class="uk-form-label" for="form-stacked-select">Hasta*:</label>
+            <input class="uk-input" name="to" type="date" value=""/>
         </div>
+    </div>
+
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-stacked-select">Horas:</label>
+        <input type="number" class="uk-input" name="hours" />
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-stacked-select">Días:</label>
+        <input type="number" class="uk-input" name="days" />
+    </div>
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-stacked-select">Mes:</label>
+        <input type="month" name="month" class="uk-input" />
+    </div>
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-stacked-select">Año:</label>
+        <input type="number" name="year" min="1900" max="2099" step="1" value="{{date('Y')}}" class="uk-input" />
     </div>
 
 
@@ -98,3 +130,9 @@
 {{ Form::close() }}
 
 @endsection
+
+<script>
+
+
+
+</script>

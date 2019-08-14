@@ -24,4 +24,7 @@ class Plan extends Model {
         return $this->hasMany('App\Invoice');
     }
 
+    public function period() {
+        return $this->belongsTo('App\Period');
+    }
 }
